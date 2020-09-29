@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Workshop_Mvc.Models;
+using Workshop_Mvc.Models.ViewModel;
 
 namespace Workshop_Mvc.Controllers
 {
