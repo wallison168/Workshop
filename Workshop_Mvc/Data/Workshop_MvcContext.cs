@@ -13,6 +13,8 @@ namespace Workshop_Mvc.Models
         {
         }
 
-        public DbSet<Workshop_Mvc.Models.Department> Department { get; set; }
+        public DbSet<Department> Department { get; set; }
+        public DbSet<SalesRecord> SalesRecords { get; set; }
+        public DbSet<Seller> Seller { get; set; }
     }
 }
