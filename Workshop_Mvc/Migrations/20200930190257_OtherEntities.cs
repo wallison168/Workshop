@@ -17,7 +17,7 @@ namespace Workshop_Mvc.Migrations
                     Name = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     BirthDate = table.Column<DateTime>(nullable: false),
-                    BaseSalary = table.Column<string>(nullable: true),
+                    BaseSalary = table.Column<double>(nullable: true),
                     Departmentid = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

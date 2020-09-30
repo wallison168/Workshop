@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Workshop_Mvc.Models;
+using Workshop_Mvc.Data;
 
 namespace Workshop_Mvc
 {
@@ -39,14 +40,17 @@ namespace Workshop_Mvc
             services.AddDbContext<Workshop_MvcContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("Workshop_MvcContext"), builder =>
                     builder.MigrationsAssembly("Workshop_Mvc")));
+
+            services.AddScoped<SeedignService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedignService seedignService)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                seedignService.Seed();
             }
             else
             {
