@@ -54,7 +54,7 @@ namespace Workshop_Mvc.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("BaseSalary");
+                    b.Property<double>("BaseSalary");
 
                     b.Property<DateTime>("BirthDate");
 
